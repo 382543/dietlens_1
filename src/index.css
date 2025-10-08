@@ -1,4 +1,3 @@
-/* Global Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,13 +6,13 @@
 }
 
 body {
-  background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+  margin: 0;
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
   color: #333;
-  line-height: 1.7;
-  min-height: 100vh;
+  line-height: 1.6;
 }
 
-/* Navbar Styling */
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -91,145 +90,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Home Section Styling */
-.home {
-  max-width: 1100px;
-  margin: 5rem auto;
-  padding: 4rem;
-  background: linear-gradient(135deg, #b2ebf2, #e0f7fa);
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  position: relative;
-}
-
-.home h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(90deg, #00acc1, #26c6da);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.home p {
-  font-size: 1.15rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-.home p:last-child {
-  font-weight: 600;
-  color: #333;
-}
-
-/* Image Card Gallery */
-.home .images {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.home .image-card {
-  background: linear-gradient(135deg, #e0f7fa, #ffffff);
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  width: 300px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border: 1px solid #b2ebf2;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.home .image-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-.home .image-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #b2ebf2;
-  transition: transform 0.3s ease;
-}
-
-.home .image-card:hover img {
-  transform: scale(1.02);
-}
-
-.home .image-card p {
-  margin-top: 1rem;
-  font-weight: 500;
-  color: #333;
-}
-
-/* Buttons Globally */
-button {
-  font-family: 'Poppins', sans-serif;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .home {
-    padding: 2rem 1rem;
-    margin: 3rem auto;
-  }
-
-  .home h1 {
-    font-size: 2rem;
-  }
-
-  .home .image-card {
-    width: 90%;
-  }
-
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .navbar ul {
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-.home .images {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
-
-.home .main-card {
-  width: 400px;
-  padding: 2rem;
-}
-
-.home .feature-cards {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.home .small-card {
-  width: 250px;
-  padding: 1rem;
-}
 /* Home Section */
 .home {
   max-width: 1200px;
@@ -245,16 +105,16 @@ button:hover {
   flex-wrap: wrap;
 }
 
-/* Left Content */
 .hero-content {
   flex: 1;
   min-width: 300px;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
-  color: #007BFF; /* calm blue */
+  font-size: 3rem;
+  color: #00796b;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .hero-content p {
@@ -272,6 +132,7 @@ button:hover {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 121, 107, 0.2);
 }
 
 .cta-button:hover {
@@ -279,11 +140,10 @@ button:hover {
   transform: translateY(-2px);
 }
 
-/* Right Card/Image */
 .hero-card {
   flex: 1;
   min-width: 300px;
-  background: #e0f7fa; /* soft gradient feel */
+  background: #e0f7fa;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   padding: 1rem;
@@ -301,27 +161,50 @@ button:hover {
   color: #007BFF;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-card {
-    margin-top: 2rem;
-  }
+/* Carousel */
+.hero-card {
+  position: relative;
+  width: 500px;
+  height: 350px;
+  overflow: hidden;
 }
-/* General Body Styles */
-body {
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-image.active {
+  opacity: 1;
+}
+
+.hero-card p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  text-align: center;
+  font-weight: 600;
   color: #333;
-  line-height: 1.6;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
-
-/* --- */
 
 /* Sign In Section */
 .signin {
@@ -330,7 +213,6 @@ body {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 .signin-container {
@@ -341,7 +223,6 @@ body {
   width: 100%;
   max-width: 450px;
   text-align: center;
-  box-sizing: border-box;
 }
 
 .signin-container h2 {
@@ -379,7 +260,6 @@ body {
   color: #333;
   background-color: #f5fcfb;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
-  box-sizing: border-box;
 }
 
 .form-group input:focus {
@@ -387,8 +267,6 @@ body {
   box-shadow: 0 0 0 4px rgba(0, 137, 123, 0.2);
   outline: none;
 }
-
-/* login */
 
 .login-button {
   background-color: #00796b;
@@ -416,110 +294,61 @@ body {
   box-shadow: 0 4px 10px rgba(0, 121, 107, 0.2);
 }
 
-/* Optional: Placeholder styling */
 input::placeholder {
   color: #aeb2b7;
   opacity: 1;
 }
-/* --- Hero Section - Home.js Specific Styles --- */
-.home {
-  padding: 50px 0;
-}
 
-.hero-section {
+/* Responsive */
+@media (max-width: 768px) {
+  .home {
+    padding: 2rem 1rem;
+    margin: 3rem auto;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-card {
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* Sign Up Section */
+.signin,
+.signup {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  flex-wrap: wrap;
+  height: 100vh; /* makes it take the full viewport height */
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
 }
 
-.hero-content {
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-  text-align: left;
-}
-
-.hero-content h1 {
-  font-size: 3.5em;
-  color: #00796b;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.hero-content p {
-  font-size: 1.2em;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.cta-button {
-  background-color: #00796b;
-  color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 121, 107, 0.2);
-}
-
-.cta-button:hover {
-  background-color: #004d40;
-  transform: translateY(-2px);
-}
-
-/* --- Image Carousel Styles --- */
-.hero-card {
-  position: relative; /* Crucial for positioning the images */
-  width: 500px; /* Set a fixed width for the carousel container */
-  height: 350px; /* Set a fixed height */
-  overflow: hidden; /* Hide images that are not active */
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-container {
-  /* This class is now used for the carousel wrapper */
-  display: flex; /* Helps to center the image within */
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Stacks the image and text */
-}
-
-.carousel-image {
-  position: absolute; /* Stack images on top of each other */
-  top: 0;
-  left: 0;
+.signin-container,
+.signup-container {
+  background-color: #ffffff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures image fills the container without distortion */
-  opacity: 0; /* Initially hide all images */
-  transition: opacity 1s ease-in-out; /* Smooth transition for fading */
-}
-
-.carousel-image.active {
-  opacity: 1; /* Show the active image */
-}
-
-.hero-card p {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 0;
+  max-width: 450px;
   text-align: center;
-  font-weight: 600;
-  color: #333;
-  z-index: 10; /* Ensure the text is on top of the images */
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
 }
+
+
+
+
